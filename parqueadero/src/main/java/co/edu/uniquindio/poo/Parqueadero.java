@@ -28,6 +28,8 @@ public class Parqueadero {
 
     }
 
+    //public void procesosInternos(Moto moto, Vehiculo vehiculo){}
+
 
     
 }
