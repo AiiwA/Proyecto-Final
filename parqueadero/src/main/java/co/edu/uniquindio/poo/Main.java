@@ -1,10 +1,72 @@
 package co.edu.uniquindio.poo;
 
-public class Main {
-    public static void main(String[] args) {
+import java.util.Scanner;
 
-        System.out.println("Ingre");
+public class Main {
+    private static Scanner scanner = new Scanner(System.in);
+    private static Parqueadero parqueadero;
+
+    public static void main(String[] args) {
+        System.out.print("Ingrese el tamaño del parqueadero: ");
+        int filas = scanner.nextInt();
+        int columnas = scanner.nextInt();
+        parqueadero = new Parqueadero(filas, columnas);
+
+        int opcion;
+        do {
+            mostrarMenu();
+            opcion = scanner.nextInt();
+            procesarOpcion(opcion);
+        } while (opcion != 0);
     }
+
+    private static void mostrarMenu() {
+        System.out.println("\n1. Parquear vehículo");
+        System.out.println("2. Retirar vehículo");
+        System.out.println("3. Verificar disponibilidad de puesto");
+        System.out.println("4. Mostrar parqueadero");
+        System.out.println("5. Establecer tarifa");
+        System.out.println("6. Generar reporte diario");
+        System.out.println("7. Generar reporte mensual");
+        System.out.println("0. Salir");
+        System.out.print("Seleccione una opción: ");
+    }
+
+    private static void procesarOpcion(int opcion) {
+        switch (opcion) {
+            case 1:
+                parquearVehiculo();
+                break;
+            case 2:
+                retirarVehiculo();
+                break;
+            case 3:
+                verificarDisponibilidad();
+                break;
+            case 4:
+                parqueadero.mostrarParqueadero();
+                break;
+            case 5:
+                establecerTarifa();
+                break;
+            case 6:
+                generarReporteDiario();
+                break;
+            case 7:
+                generarReporteMensual();
+                break;
+            case 0:
+                System.out.println("Saliendo...");
+                break;
+            default:
+                System.out.println("Opción no válida.");
+        }
+
+    public void parquearVehiculo()
+
+    
+    }
+    
 
 }
 

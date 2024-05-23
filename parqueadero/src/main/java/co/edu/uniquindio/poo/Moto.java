@@ -11,7 +11,7 @@ public class Moto extends Vehiculo {
  * Constructor de la clase Moto.
  */
 
-    public Moto(boolean hibrida, String placa, String modelo, String propietario){
+    public Moto(boolean hibrida, String placa, int modelo, String propietario){
         super(placa, modelo, propietario);
         this.hibrida = hibrida;
     }

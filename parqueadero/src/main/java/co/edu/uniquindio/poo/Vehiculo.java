@@ -1,19 +1,36 @@
 package co.edu.uniquindio.poo;
 
-public class Vehiculo {
+public abstract class Vehiculo {
 
     private String placa;
-    private String modelo;
+    private int modelo;
     private String propietario;
 
 /**
 * Constructor de la clase vehículo.
 */
 
-    public Vehiculo(String placa, String modelo, String propietario){
+    public Vehiculo(String placa, int modelo, String propietario){
         this.placa = placa;
         this.modelo = modelo;
         this.propietario = propietario;
+    }
+
+/**
+ * metodos set  de los datos de la clase vehiculo
+ * @return
+ */
+
+    public void setPlaca(String placa){
+        this.placa=placa;
+    }    
+
+    public void setModelo(int modelo){
+        this.modelo=modelo;
+    }
+
+    public void setPropietario(String propietario){
+        this.propietario=propietario;
     }
 
 /**
@@ -25,12 +42,13 @@ public class Vehiculo {
         return placa;
     }
 
-    public String getModelo(){
+    public int getModelo(){
         return modelo;
     }
 
     public String getPropietario(){
         return propietario;
     }
+
 }
 
