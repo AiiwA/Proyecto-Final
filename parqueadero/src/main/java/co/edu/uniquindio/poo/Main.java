@@ -7,10 +7,20 @@ public class Main {
     private static Parqueadero parqueadero;
 
     public static void main(String[] args) {
-        System.out.print("Ingrese el tamaño del parqueadero: ");
-        int filas = scanner.nextInt();
-        int columnas = scanner.nextInt();
-        parqueadero = new Parqueadero(filas, columnas);
+        int filas,columnas;
+        while(true){
+            System.out.println("Ingrese el tamaño de las filas: ");
+            filas=scanner.nextInt();
+            System.out.println("ingrese el tamaño de las columnas: ");
+            columnas=scanner.nextInt();
+            if (filas>0 && columnas>0){
+                break;
+            } 
+            else{
+                System.out.println("El tamaño del parqueadero debe ser positivo, intente otra vez");
+            }
+            }
+            parqueadero = new Parqueadero(filas, columnas);
 
         int opcion;
         do {

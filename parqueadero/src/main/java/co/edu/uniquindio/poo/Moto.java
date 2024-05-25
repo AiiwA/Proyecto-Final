@@ -5,14 +5,14 @@ public class Moto extends Vehiculo {
 
     static Scanner scanner = new Scanner(System.in);
 
-    private static boolean hibrida;
-    private static int velMax;
+    private static  boolean hibrida;
+    private static  int velMax;
 
 /**
  * Constructor de la clase Moto.
  */
 
-    public Moto(boolean hibrida, String placa, int modelo, String propietario, int velMax){
+    public Moto(boolean hibrida, String placa, int modelo, Propietario propietario, int velMax){
         super(placa, modelo, propietario);
         this.hibrida = hibrida;
         this.velMax = velMax;
@@ -66,11 +66,24 @@ public class Moto extends Vehiculo {
 
 
 /**
- * Metodos gets
+ * Metodos gets y sets
  */
 
     public boolean getHibrida(){
         return hibrida;
     }
+
+    public  void setHibrida(boolean hibrida) {
+        Moto.hibrida = hibrida;
+    }
+
+    public  int getVelMax() {
+        return velMax;
+    }
+
+    public void setVelMax(int velMax) {
+        Moto.velMax = velMax;
+    }
+
 }
 

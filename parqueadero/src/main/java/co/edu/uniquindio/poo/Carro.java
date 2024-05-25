@@ -1,5 +1,4 @@
 package co.edu.uniquindio.poo;
-
 import java.util.Scanner;
 
 public class Carro extends Vehiculo{
@@ -9,7 +8,7 @@ public class Carro extends Vehiculo{
     /**
      * Constructor.
      */
-    public Carro(String placa, int modelo, String propietario){
+    public Carro(String placa, int modelo, Propietario propietario){
         super(placa, modelo, propietario);
     }
 
