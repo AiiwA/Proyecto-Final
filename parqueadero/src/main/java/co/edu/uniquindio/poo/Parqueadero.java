@@ -1,12 +1,13 @@
 package co.edu.uniquindio.poo;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class Parqueadero {
 
     private Puesto[][] puestos;
-    private List<Registro> historial;
+    private Collection<Registro> historial;
     private double tarifaCarro;
     private double tarifaMoto;
 
@@ -28,7 +29,24 @@ public class Parqueadero {
 
     }
 
-    //public void procesosInternos(Moto moto, Vehiculo vehiculo){}
+    public boolean parquearVehiculo(Vehiculo vehiculo, int fila, int columna) {
+        boolean parquear;
+        if (fila >= 0 && fila < puestos.length && columna >= 0 && columna < puestos[0].length) {
+            Puesto puesto = puestos[fila][columna];
+            if (!puesto.estaOcupado()) {
+                puesto.asignarVehiculo(vehiculo);
+                historial.add(vehiculo);
+                parquear=true;
+            }
+            parquear=false;
+        }
+        return parquear;
+    }
+
+    //get del tamaño del parqueadero
+    public int[] getTamano() {
+        return new int[]{puestos.length, puestos[0].length};
+    }
 
 
     

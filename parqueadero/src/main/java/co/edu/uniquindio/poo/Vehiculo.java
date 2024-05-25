@@ -1,18 +1,18 @@
 package co.edu.uniquindio.poo;
 import java.util.Scanner;
 
-public class Vehiculo {
+public  abstract class Vehiculo {
 
     private String placa;
     private int modelo;
-    private String propietario;
+    public Propietario propietario;
     Scanner scanner = new Scanner(System.in);
 
     /**
     * Constructor de la clase vehículo.
     */
 
-    public Vehiculo(String placa, int modelo, String propietario){
+    public Vehiculo(String placa, int modelo, Propietario propietario){
         this.placa = placa;
         this.modelo = modelo;
         this.propietario = propietario;
@@ -59,10 +59,6 @@ public class Vehiculo {
         this.modelo=modelo;
     }
 
-    public void setPropietario(String propietario){
-        this.propietario=propietario;
-    }
-
     /**
     * Métodos gets de los datos de la clase Vehículo.
     * @return
@@ -76,7 +72,7 @@ public class Vehiculo {
         return modelo;
     }
 
-    public String getPropietario(){
+    public Propietario getPropietario(){
         return propietario;
     }
 
