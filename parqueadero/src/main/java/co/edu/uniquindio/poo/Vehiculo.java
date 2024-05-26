@@ -20,33 +20,8 @@ public  abstract class Vehiculo {
         this.propietario = propietario;
     }
 
-        /**
-         * Metodo para elegir moto o carro como vehiculo a añadir
-        */
-    public void crearVehiculo(){
-        boolean aux = false;
-        while (!aux) {
-            System.out.println("Que tipo de vehiculo desea? 1.Moto.         2.Carro.");
-            int select = scanner.nextInt();
-            switch (select) {
-                case 1:
-                    Moto.crearMoto();
-                    Moto.determinarTipo();
-                    aux = true;
-                    break;
-                
-                case 2:
-                    Carro.crearCarro();
-                    aux = true;
-                    break;
-            
-                default:
-                    System.out.println("Error. Elija una opción válida.");
-                    break;
-            }
-        }
-            Moto.crearMoto();
-    }
+    public abstract void crearVehiculo();
+    public abstract double calcularTarifa();
 
     /**
     * metodos set  de los datos de la clase vehiculo

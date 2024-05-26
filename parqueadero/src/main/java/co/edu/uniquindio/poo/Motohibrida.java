@@ -1,26 +1,20 @@
 package co.edu.uniquindio.poo;
-import java.util.Scanner;
 
-public class Moto extends Vehiculo {
-
-    static Scanner scanner = new Scanner(System.in);
-
-    private static int velMax;
+public class Motohibrida extends Moto {
 
     /**
-     * Constructor de la clase moto
+     * Constructor moto hibrida
      * @param placa
      * @param modelo
      * @param propietario
      * @param velMax
      */
-    public Moto(String placa, int modelo, Propietario propietario, int velMax){
-        super(placa, modelo, propietario);
-        Moto.velMax = velMax;
+    public Motohibrida(String placa, int modelo, Propietario propietario, int velMax){
+        super(placa, modelo, propietario, velMax);
     }
 
     /**
-     * Metodo para crear una moto.
+     * Metodo para crear una moto hibrida.
      */
     public void crearVehiculo(){
 
@@ -36,19 +30,9 @@ public class Moto extends Vehiculo {
         
     }
 
-
-
-/**
- * Metodos gets y sets
- */
-
-    public  int getVelMax() {
-        return velMax;
+    @Override
+    public double calcularTarifa() {
+        return tarifaMotoHibrida;
     }
-
-    public void setVelMax(int velMax) {
-        Moto.velMax = velMax;
-    }
-
+    
 }
-

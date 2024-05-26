@@ -2,14 +2,13 @@ package co.edu.uniquindio.poo;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 public class Parqueadero {
 
     private Puesto[][] puestos;
-    private Collection<Registro> historial;
-    private double tarifaCarro;
-    private double tarifaMoto;
+    private Collection<Vehiculo> historial;
+    private double tarifaCarro,tarifaMoto,tarifaMotoHibrida;
+    private double dineroRecaudadoDiario, dineroRecaudadoMensual;
 
     /**
      * Constructor de la clase parqueadero
@@ -37,16 +36,33 @@ public class Parqueadero {
             if (!puesto.estaOcupado()) {
                 puesto.asignarVehiculo(vehiculo);
                 historial.add(vehiculo);
-                parquear=true;
                 vehiculo.getPropietario().agregarVehiculo(vehiculo);
+                parquear=true;
             }
-            parquear=false;
+            else{
+                parquear=false;
+            }
         }
         return parquear;
     }
 
     public void mostrarParqueadero(){
 
+    }
+
+    public void establecerTarifas(double tarifaCarro, double tarifaMoto, double tarifaMotoHibrida) {
+        this.tarifaCarro = tarifaCarro;
+        this.tarifaMoto = tarifaMoto;
+        this.tarifaMotoHibrida=tarifaMotoHibrida;
+    }
+
+    public void generarReporteDiario() {
+        dineroRecaudadoDiario = 0.0;
+        for (Vehiculo vehiculo : historial) {
+            dineroRecaudadoDiario += vehiculo.calcularTarifa();
+        }
+        System.out.println("Reporte Diario:");
+        System.out.println("Total Recaudado: " + dineroRecaudadoDiario);
     }
 
     //get del tamaño del parqueadero

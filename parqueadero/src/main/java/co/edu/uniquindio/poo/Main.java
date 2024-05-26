@@ -23,17 +23,32 @@ public class Main {
             else{
                 System.out.println("El tamaño del parqueadero debe ser positivo, intente otra vez");
             }
-            }
-            parqueadero = new Parqueadero(filas, columnas);
-        }
 
-    public void seleccionarOpcion(){
-        int opcion;
-        do {
+            parqueadero = new Parqueadero(filas, columnas);
+
+            System.out.println("Ingrese la tarifa por hora para carro:");
+            double tarifaCarro = scanner.nextDouble();
+            System.out.println("Ingrese la tarifa por hora para moto clásica:");
+            double tarifaMotoClasica = scanner.nextDouble();
+            System.out.println("Ingrese la tarifa por hora para moto híbrida:");
+            double tarifaMotoHibrida = scanner.nextDouble();
+            parqueadero.establecerTarifas(tarifaCarro, tarifaMotoClasica, tarifaMotoHibrida);
+        }
+        
+
+        boolean seguir=true;
+        while (seguir) {
             mostrarMenu();
-            opcion = scanner.nextInt();
+            int opcion = scanner.nextInt();
             procesarOpcion(opcion);
-        } while (opcion != 0);
+
+            System.out.println("¿Desea realizar otra acción? (S/N): ");
+            String continuar = scanner.next();
+            if (continuar.equals("N")) {
+                seguir = false;
+            }
+            scanner.close();
+            }
     }
 
     private static void mostrarMenu() {
@@ -81,12 +96,35 @@ public class Main {
                     System.out.println("Opción no válida.");
             }
         }
-
-    public void parquearVehiculo()
-
-    
     }
-    
+
+    public void parquearVehiculo(){
+
+    }
+
+    public void retirarVehiculo(){
+
+    }
+
+    public void verificarDisponibilidad(){
+
+    }
+
+    public void establecerTarifa(){
+
+    }
+
+    public void generarReporteDiario(){
+
+    }    
+
+    public void generarReporteMensual(){
+
+    }
 
 }
+
+
+
+
 

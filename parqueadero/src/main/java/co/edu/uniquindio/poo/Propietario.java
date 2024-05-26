@@ -5,7 +5,7 @@ import java.util.Collection;
 
 public class Propietario {
 
-    private String nombre,cedula;
+    private String nombre,apellido, cedula;
     private Collection<Vehiculo>vehiculos;
 
     /**
@@ -13,7 +13,7 @@ public class Propietario {
      * @param nombre
      * @param contacto
      */
-    public Propietario(String nombre, String cedula) {
+    public Propietario(String nombre,String Apellido ,String cedula) {
         this.nombre=nombre;
         this.cedula=cedula;
         this.vehiculos=new ArrayList<>();
@@ -38,5 +38,19 @@ public class Propietario {
     public Collection<Vehiculo> getVehiculos(){
         return vehiculos;
     }
+
+    public void agregarVehiculo(Vehiculo vehiculo){
+        vehiculos.add(vehiculo);
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    
     
 }
