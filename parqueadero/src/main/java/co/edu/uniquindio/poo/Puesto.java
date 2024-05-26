@@ -6,6 +6,11 @@ public class Puesto {
     private int columna;
     private Vehiculo vehiculo;
 
+    /**
+     * Comstructor de la clase puesto
+     * @param fila
+     * @param columna
+     */
     public Puesto(int fila, int columna){
         this.fila=fila;
         this.columna=columna;

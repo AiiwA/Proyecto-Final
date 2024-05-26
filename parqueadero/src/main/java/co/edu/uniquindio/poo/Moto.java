@@ -8,10 +8,14 @@ public class Moto extends Vehiculo {
     private static  boolean hibrida;
     private static  int velMax;
 
-/**
- * Constructor de la clase Moto.
- */
-
+    /**
+     * Constructor de la clase moto
+     * @param hibrida
+     * @param placa
+     * @param modelo
+     * @param propietario
+     * @param velMax
+     */
     public Moto(boolean hibrida, String placa, int modelo, Propietario propietario, int velMax){
         super(placa, modelo, propietario);
         this.hibrida = hibrida;

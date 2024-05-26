@@ -8,6 +8,13 @@ public class Registro {
     private LocalDateTime horaIngreso;
     private int fila,columna;
 
+    /**
+     * constructor de la clase vehiculo
+     * @param vehiculo
+     * @param horaIngreso
+     * @param fila
+     * @param columna
+     */
     public Registro(Vehiculo vehiculo,LocalDateTime horaIngreso, int fila, int columna){
         this.vehiculo=vehiculo;
         this.horaIngreso=horaIngreso;
@@ -15,6 +22,6 @@ public class Registro {
         this.columna=columna;
     }
 
-    
+
 
 }

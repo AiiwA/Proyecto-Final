@@ -9,9 +9,11 @@ public  abstract class Vehiculo {
     Scanner scanner = new Scanner(System.in);
 
     /**
-    * Constructor de la clase vehículo.
-    */
-
+     * Constructor de la clase Vehiculo
+     * @param placa
+     * @param modelo
+     * @param propietario
+     */
     public Vehiculo(String placa, int modelo, Propietario propietario){
         this.placa = placa;
         this.modelo = modelo;

@@ -6,7 +6,10 @@ public class Carro extends Vehiculo{
     static Scanner scanner = new Scanner(System.in);
 
     /**
-     * Constructor.
+     * Constructor de la clase Carro
+     * @param placa
+     * @param modelo
+     * @param propietario
      */
     public Carro(String placa, int modelo, Propietario propietario){
         super(placa, modelo, propietario);

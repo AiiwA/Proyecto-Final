@@ -12,8 +12,9 @@ public class Parqueadero {
     private double tarifaMoto;
 
     /**
-     * Constructor de clase parqueadero
-     * @param n
+     * Constructor de la clase parqueadero
+     * @param filas
+     * @param columnas
      */
     public Parqueadero(int filas, int columnas){
         puestos=new Puesto[filas][columnas];
@@ -37,10 +38,15 @@ public class Parqueadero {
                 puesto.asignarVehiculo(vehiculo);
                 historial.add(vehiculo);
                 parquear=true;
+                vehiculo.getPropietario().agregarVehiculo(vehiculo);
             }
             parquear=false;
         }
         return parquear;
+    }
+
+    public void mostrarParqueadero(){
+
     }
 
     //get del tamaño del parqueadero

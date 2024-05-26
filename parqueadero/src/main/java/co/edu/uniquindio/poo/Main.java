@@ -6,6 +6,10 @@ public class Main {
     private static Scanner scanner = new Scanner(System.in);
     private static Parqueadero parqueadero;
 
+    /**
+     * Metodo para ingresar el numero de filas y columnas
+     * @param args
+     */
     public static void main(String[] args) {
         int filas,columnas;
         while(true){
@@ -21,7 +25,9 @@ public class Main {
             }
             }
             parqueadero = new Parqueadero(filas, columnas);
+        }
 
+    public void seleccionarOpcion(){
         int opcion;
         do {
             mostrarMenu();
