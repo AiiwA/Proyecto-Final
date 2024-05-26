@@ -49,33 +49,37 @@ public class Main {
     }
 
     private static void procesarOpcion(int opcion) {
-        switch (opcion) {
-            case 1:
-                parquearVehiculo();
-                break;
-            case 2:
-                retirarVehiculo();
-                break;
-            case 3:
-                verificarDisponibilidad();
-                break;
-            case 4:
-                parqueadero.mostrarParqueadero();
-                break;
-            case 5:
-                establecerTarifa();
-                break;
-            case 6:
-                generarReporteDiario();
-                break;
-            case 7:
-                generarReporteMensual();
-                break;
-            case 0:
-                System.out.println("Saliendo...");
-                break;
-            default:
-                System.out.println("Opción no válida.");
+        boolean continuar=true;
+        while(continuar){
+            switch (opcion) {
+                case 1:
+                    parquearVehiculo();
+                    break;
+                case 2:
+                    retirarVehiculo();
+                    break;
+                case 3:
+                    verificarDisponibilidad();
+                    break;
+                case 4:
+                    parqueadero.mostrarParqueadero();
+                    break;
+                case 5:
+                    establecerTarifa();
+                    break;
+                case 6:
+                    generarReporteDiario();
+                    break;
+                case 7:
+                    generarReporteMensual();
+                    break;
+                case 0:
+                    System.out.println("Saliendo...");
+                    continuar=false;
+                    break;
+                default:
+                    System.out.println("Opción no válida.");
+            }
         }
 
     public void parquearVehiculo()

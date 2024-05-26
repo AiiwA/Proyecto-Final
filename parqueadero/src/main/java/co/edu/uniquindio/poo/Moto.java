@@ -5,8 +5,8 @@ public class Moto extends Vehiculo {
 
     static Scanner scanner = new Scanner(System.in);
 
-    private static  boolean hibrida;
-    private static  int velMax;
+    private boolean hibrida;
+    private int velMax;
 
     /**
      * Constructor de la clase moto

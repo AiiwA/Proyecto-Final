@@ -31,7 +31,7 @@ public class Parqueadero {
     }
 
     public boolean parquearVehiculo(Vehiculo vehiculo, int fila, int columna) {
-        boolean parquear;
+        boolean parquear=false;
         if (fila >= 0 && fila < puestos.length && columna >= 0 && columna < puestos[0].length) {
             Puesto puesto = puestos[fila][columna];
             if (!puesto.estaOcupado()) {
