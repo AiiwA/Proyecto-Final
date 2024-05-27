@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -46,8 +47,32 @@ public class Parqueadero {
         return parquear;
     }
 
-    public void mostrarParqueadero(){
+    public Vehiculo retirarVehiculo(int fila, int columna) {
+        Vehiculo vehiculo = null;
 
+        if (fila >= 0 && fila < puestos.length && columna >= 0 && columna < puestos[0].length) {
+            Puesto puesto = puestos[fila][columna];
+            if (puesto.estaOcupado()) {
+                vehiculo = puesto.getVehiculo();
+                LocalDateTime horaSalida = LocalDateTime.now();
+                double tarifa = vehiculo.getTarifa(tarifaCarro, tarifaMoto, tarifaMotoHibrida);
+                double costo = vehiculo.calcularTarifa(horaSalida);
+                dineroRecaudadoDiario += costo;
+                dineroRecaudadoMensual += costo;
+                puesto.retirarVehiculo();
+            }
+        }
+
+        return vehiculo;
+    }
+
+    public void mostrarParqueadero(){
+        for (int i = 0; i < puestos.length; i++) {
+            for (int j = 0; j < puestos[i].length; j++) {
+                System.out.print(puestos[i][j].estaOcupado() ? "O " : "L ");
+            }
+            System.out.println();
+        }
     }
 
     public void establecerTarifas(double tarifaCarro, double tarifaMoto, double tarifaMotoHibrida) {
@@ -57,17 +82,25 @@ public class Parqueadero {
     }
 
     public void generarReporteDiario() {
-        dineroRecaudadoDiario = 0.0;
-        for (Vehiculo vehiculo : historial) {
-            dineroRecaudadoDiario += vehiculo.calcularTarifa();
-        }
         System.out.println("Reporte Diario:");
         System.out.println("Total Recaudado: " + dineroRecaudadoDiario);
+        dineroRecaudadoDiario = 0.0;
+    }
+    
+    public void generarReporteMensual() {
+        System.out.println("Reporte Mensual:");
+        System.out.println("Total Recaudado: " + dineroRecaudadoMensual);
+        dineroRecaudadoMensual = 0.0;
     }
 
     //get del tamaño del parqueadero
     public int[] getTamano() {
         return new int[]{puestos.length, puestos[0].length};
+    }
+
+    public Puesto[][] getPuestos() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPuestos'");
     }
 
 

@@ -1,4 +1,6 @@
 package co.edu.uniquindio.poo;
+import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public  abstract class Vehiculo {
@@ -6,6 +8,7 @@ public  abstract class Vehiculo {
     private String placa;
     private int modelo;
     public Propietario propietario;
+    private LocalDateTime horaIngreso;
     Scanner scanner = new Scanner(System.in);
 
     /**
@@ -21,7 +24,13 @@ public  abstract class Vehiculo {
     }
 
     public abstract void crearVehiculo();
-    public abstract double calcularTarifa();
+    public abstract double calcularTarifa(LocalDateTime horaSalida, double tarifa);
+
+    public double calcularTarifa(LocalDateTime horaSalida) {
+        Duration duracion = Duration.between(getHoraIngreso(), horaSalida);
+        long horas = duracion.toHours();
+        return horas * getTarifa(0, 0, 0);
+    }
 
     /**
     * metodos set  de los datos de la clase vehiculo
@@ -53,5 +62,17 @@ public  abstract class Vehiculo {
         return propietario;
     }
 
+    public LocalDateTime getHoraIngreso() {
+        return horaIngreso;
+    }
+
+    public void setHoraIngreso(LocalDateTime horaIngreso) {
+        this.horaIngreso = horaIngreso;
+    }
+
+    public abstract double getTarifa(double tarifaCarro, double tarifaMoto, double tarifaMotoHibrida);
+
 }
+
+
 

@@ -1,4 +1,6 @@
 package co.edu.uniquindio.poo;
+import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class Carro extends Vehiculo{
@@ -24,5 +26,16 @@ public class Carro extends Vehiculo{
         setModelo(scanner.nextInt());
         scanner.nextLine();
     }
-    
+
+    public double calcularTarifa(LocalDateTime horaSalida, double tarifa) {
+        Duration duracion = Duration.between(getHoraIngreso(), horaSalida);
+        long horas = duracion.toHours();
+        return horas * tarifa;
+    }
+
+    public double getTarifa(double tarifaCarro, double tarifaMoto, double tarifaMotoHibrida) {
+        return tarifaCarro;
+    }
 }
+    
+

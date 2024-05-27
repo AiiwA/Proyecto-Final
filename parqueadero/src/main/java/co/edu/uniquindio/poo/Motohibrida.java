@@ -1,5 +1,8 @@
 package co.edu.uniquindio.poo;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
+
 public class Motohibrida extends Moto {
 
     /**
@@ -30,9 +33,13 @@ public class Motohibrida extends Moto {
         
     }
 
-    @Override
-    public double calcularTarifa() {
+    public double calcularTarifa(LocalDateTime horaSalida, double tarifa) {
+        Duration duracion = Duration.between(getHoraIngreso(), horaSalida);
+        long horas = duracion.toHours();
+        return horas * tarifa;
+    }
+
+    public double getTarifa(double tarifaCarro, double tarifaMoto, double tarifaMotoHibrida) {
         return tarifaMotoHibrida;
     }
-    
 }

@@ -98,27 +98,103 @@ public class Main {
         }
     }
 
-    public void parquearVehiculo(){
+    public static void parquearVehiculo(){
+        System.out.println("Ingrese el tipo de vehículo (1=Carro, 2=Moto, 3=Moto Híbrida): ");
+        int tipo = scanner.nextInt();
+        System.out.println("Ingrese la placa del vehículo: ");
+        String placa = scanner.next();
+        System.out.println("Ingrese el modelo del vehículo: ");
+        int modelo = scanner.nextInt();
+        System.out.println("Ingrese el nombre del propietario: ");
+        String nombre = scanner.next();
+        System.out.println("Ingrese el apellido del propietario: ");
+        String apellido = scanner.next();
+        System.out.println("Ingrese la cédula del propietario: ");
+        String cedula = scanner.next();
+        System.out.println("Ingrese la fila del puesto: ");
+        int fila = scanner.nextInt();
+        System.out.println("Ingrese la columna del puesto: ");
+        int columna = scanner.nextInt();
+        Propietario propietario = new Propietario(nombre,apellido,cedula);
+        Vehiculo vehiculo;
+        switch (tipo) {
+            case 1:
+                vehiculo = new Carro(placa, modelo, propietario);
+                break;
+            case 2:
+                System.out.println("Ingrese la velocidad máxima de la moto: ");
+                int velMax = scanner.nextInt();
+                vehiculo = new Moto(placa, modelo, propietario, velMax);
+                break;
+            case 3:
+                System.out.println("Ingrese la velocidad máxima de la moto híbrida: ");
+                int velMaxHibrida = scanner.nextInt();
+                vehiculo = new Motohibrida(placa, modelo, propietario, velMaxHibrida);
+                break;
+            default:
+                System.out.println("Tipo de vehículo no válido.");
+                return;
+        }
 
+        boolean exito = parqueadero.parquearVehiculo(vehiculo, fila, columna);
+        if (exito) {
+            System.out.println("Vehículo parqueado con éxito.");
+        } else {
+            System.out.println("No se pudo parquear el vehículo. Verifique si el puesto está ocupado o si las coordenadas son válidas.");
+        }
+        
     }
 
-    public void retirarVehiculo(){
 
+    public static void retirarVehiculo(){
+        System.out.println("Ingrese la fila del puesto: ");
+        int fila = scanner.nextInt();
+        System.out.println("Ingrese la columna del puesto: ");
+        int columna = scanner.nextInt();
+        Vehiculo vehiculo = parqueadero.retirarVehiculo(fila, columna);
+        if (vehiculo != null) {
+            System.out.println("Vehículo retirado con éxito. Detalles: " + vehiculo.getPlaca());
+        } else {
+            System.out.println("No se pudo retirar el vehículo. Verifique si las coordenadas son válidas y si el puesto está ocupado.");
+        }
     }
 
-    public void verificarDisponibilidad(){
 
+    public static void verificarDisponibilidad(){
+        System.out.println("Ingrese la fila del puesto: ");
+        int fila = scanner.nextInt();
+        System.out.println("Ingrese la columna del puesto: ");
+        int columna = scanner.nextInt();
+        if (fila >= 0 && fila < parqueadero.getTamano()[0] && columna >= 0 && columna < parqueadero.getTamano()[1]) {
+            Puesto puesto = parqueadero.getPuestos()[fila][columna];
+            if (puesto.estaOcupado()) {
+                System.out.println("El puesto está ocupado por el vehículo con placa: " + puesto.getVehiculo().getPlaca());
+            } else {
+                System.out.println("El puesto está libre.");
+            }
+        } else {
+            System.out.println("Coordenadas del puesto no válidas.");
+        }
     }
 
-    public void establecerTarifa(){
 
+    public static void establecerTarifa(){
+        System.out.println("Ingrese la tarifa por hora para carro:");
+        double tarifaCarro = scanner.nextDouble();
+        System.out.println("Ingrese la tarifa por hora para moto clásica:");
+        double tarifaMotoClasica = scanner.nextDouble();
+        System.out.println("Ingrese la tarifa por hora para moto híbrida:");
+        double tarifaMotoHibrida = scanner.nextDouble();
+        parqueadero.establecerTarifas(tarifaCarro, tarifaMotoClasica, tarifaMotoHibrida);
+        System.out.println("Tarifas establecidas con éxito.");
     }
 
-    public void generarReporteDiario(){
+
+    public static void generarReporteDiario(){
 
     }    
 
-    public void generarReporteMensual(){
+    public static void generarReporteMensual(){
 
     }
 

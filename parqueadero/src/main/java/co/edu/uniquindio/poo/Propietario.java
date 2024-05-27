@@ -13,9 +13,10 @@ public class Propietario {
      * @param nombre
      * @param contacto
      */
-    public Propietario(String nombre,String Apellido ,String cedula) {
+    public Propietario(String nombre,String apellido ,String cedula) {
         this.nombre=nombre;
         this.cedula=cedula;
+        this.apellido=apellido;
         this.vehiculos=new ArrayList<>();
     }
 
