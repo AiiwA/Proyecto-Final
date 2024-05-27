@@ -47,4 +47,14 @@ public class Puesto {
         return vehiculo;
     }
 
+    public int getFila() {
+        return fila;
+    }
+
+    public int getColumna() {
+        return columna;
+    }
+
+    
+
 }

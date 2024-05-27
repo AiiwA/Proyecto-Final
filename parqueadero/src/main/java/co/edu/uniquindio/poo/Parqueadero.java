@@ -109,8 +109,7 @@ public class Parqueadero {
     }
 
     public Puesto[][] getPuestos() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPuestos'");
+        return puestos;
     }
 
 
