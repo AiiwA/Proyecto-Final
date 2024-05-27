@@ -15,6 +15,8 @@ public class Puesto {
         this.fila=fila;
         this.columna=columna;
         this.vehiculo=null;
+        assert fila >=0: "Las filas no pueden ser negativas";
+        assert columna >=0: "Las columnas no pueden ser negativas";
     }
 
     /**

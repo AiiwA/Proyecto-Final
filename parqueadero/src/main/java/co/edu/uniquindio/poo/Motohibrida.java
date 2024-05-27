@@ -14,6 +14,8 @@ public class Motohibrida extends Moto {
      */
     public Motohibrida(String placa, int modelo, Propietario propietario, int velMax){
         super(placa, modelo, propietario, velMax);
+        assert propietario != null: "La moto debe de tener un propietario.";
+        assert velMax >= 0: "La velocidad No puede ser negativa.";
     }
 
     /**

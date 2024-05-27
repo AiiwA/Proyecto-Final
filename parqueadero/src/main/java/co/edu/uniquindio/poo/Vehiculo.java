@@ -21,6 +21,7 @@ public  abstract class Vehiculo {
         this.placa = placa;
         this.modelo = modelo;
         this.propietario = propietario;
+        assert modelo >=0;
     }
 
     public abstract void crearVehiculo();

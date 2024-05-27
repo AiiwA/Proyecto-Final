@@ -47,7 +47,7 @@ public class Main {
                 seguir = false;
             }
             scanner.close();
-            }
+        }
     }
 
     private static void mostrarMenu() {

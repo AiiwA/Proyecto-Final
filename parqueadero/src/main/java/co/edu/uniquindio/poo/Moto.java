@@ -19,6 +19,8 @@ public class Moto extends Vehiculo {
     public Moto(String placa, int modelo, Propietario propietario, int velMax){
         super(placa, modelo, propietario);
         Moto.velMax = velMax;
+        assert propietario != null: "La moto debe de tener un propietario.";
+        assert velMax >= 0: "La velocidad No puede ser negativa.";
     }
 
     /**

@@ -18,6 +18,9 @@ public class Propietario {
         this.cedula=cedula;
         this.apellido=apellido;
         this.vehiculos=new ArrayList<>();
+        assert nombre !=null && !nombre.isBlank():"Por favor ingrese un nombre.";
+        assert apellido !=null && !apellido.isBlank():"Por favor ingrese un apellido.";
+        assert cedula !=null && !cedula.isBlank(): "Por favor ingrese una cedula";
     }
 
     public String getNombre() {
