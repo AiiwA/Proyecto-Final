@@ -37,5 +37,3 @@ public class Carro extends Vehiculo{
         return tarifaCarro;
     }
 }
-    
-

@@ -7,7 +7,7 @@ import java.util.Collection;
 public class Parqueadero {
 
     private Puesto[][] puestos;
-    private Collection<Vehiculo> historial;
+    private Collection<Registro> historial;
     private double tarifaCarro,tarifaMoto,tarifaMotoHibrida;
     private double dineroRecaudadoDiario, dineroRecaudadoMensual;
 
@@ -31,25 +31,24 @@ public class Parqueadero {
     }
 
     public boolean parquearVehiculo(Vehiculo vehiculo, int fila, int columna) {
-        boolean parquear=false;
+        boolean resultado = false;
+
         if (fila >= 0 && fila < puestos.length && columna >= 0 && columna < puestos[0].length) {
             Puesto puesto = puestos[fila][columna];
             if (!puesto.estaOcupado()) {
                 puesto.asignarVehiculo(vehiculo);
-                historial.add(vehiculo);
-                vehiculo.getPropietario().agregarVehiculo(vehiculo);
-                parquear=true;
-            }
-            else{
-                parquear=false;
+                vehiculo.setHoraIngreso(LocalDateTime.now());
+                historial.add(new Registro(vehiculo, LocalDateTime.now(), fila, columna));
+                resultado = true;
             }
         }
-        return parquear;
+    
+        return resultado;
     }
 
     public Vehiculo retirarVehiculo(int fila, int columna) {
         Vehiculo vehiculo = null;
-
+    
         if (fila >= 0 && fila < puestos.length && columna >= 0 && columna < puestos[0].length) {
             Puesto puesto = puestos[fila][columna];
             if (puesto.estaOcupado()) {
@@ -62,9 +61,20 @@ public class Parqueadero {
                 puesto.retirarVehiculo();
             }
         }
-
+    
+        for (Registro registro : historial) {
+            if (registro.getVehiculo().equals(vehiculo) && registro.getHoraSalida() == null) {
+                LocalDateTime horaSalida = LocalDateTime.now();
+                registro.setHoraSalida(horaSalida);
+                double costo = vehiculo.calcularTarifa(horaSalida);
+                registro.setCosto(costo);
+                break;
+            }
+        }
+    
         return vehiculo;
     }
+    
 
     public void mostrarParqueadero(){
         for (int i = 0; i < puestos.length; i++) {

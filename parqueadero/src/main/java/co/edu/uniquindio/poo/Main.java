@@ -24,8 +24,6 @@ public class Main {
                 System.out.println("El tamaño del parqueadero debe ser positivo, intente otra vez");
             }
 
-            parqueadero = new Parqueadero(filas, columnas);
-
             System.out.println("Ingrese la tarifa por hora para carro:");
             double tarifaCarro = scanner.nextDouble();
             System.out.println("Ingrese la tarifa por hora para moto clásica:");
@@ -34,6 +32,7 @@ public class Main {
             double tarifaMotoHibrida = scanner.nextDouble();
             parqueadero.establecerTarifas(tarifaCarro, tarifaMotoClasica, tarifaMotoHibrida);
         }
+        parqueadero = new Parqueadero(filas, columnas);
         
 
         boolean seguir=true;
@@ -94,6 +93,11 @@ public class Main {
                     break;
                 default:
                     System.out.println("Opción no válida.");
+            }
+    
+            if (continuar) {
+                mostrarMenu();
+                opcion = scanner.nextInt();
             }
         }
     }
@@ -191,16 +195,13 @@ public class Main {
 
 
     public static void generarReporteDiario(){
+        parqueadero.generarReporteDiario();
 
     }    
 
     public static void generarReporteMensual(){
+        parqueadero.generarReporteMensual();
 
     }
 
 }
-
-
-
-
-

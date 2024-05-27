@@ -73,6 +73,3 @@ public  abstract class Vehiculo {
     public abstract double getTarifa(double tarifaCarro, double tarifaMoto, double tarifaMotoHibrida);
 
 }
-
-
-
