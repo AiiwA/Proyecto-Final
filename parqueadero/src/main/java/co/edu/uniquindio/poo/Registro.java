@@ -49,16 +49,22 @@ public class Registro {
         this.costo = costo;
     }
 
-    @Override
+
     public String toString() {
-        return "Registro{" +
+        String salida = "Registro{" +
                 "vehiculo=" + vehiculo.getPlaca() +
                 ", horaIngreso=" + horaIngreso +
-                ", horaSalida=" + horaSalida +
-                ", fila=" + fila +
+                ", ";
+        if (horaSalida != null) {
+            salida += "horaSalida=" + horaSalida + ", ";
+        } else {
+            salida += "horaSalida=null, ";
+        }
+        salida += "fila=" + fila +
                 ", columna=" + columna +
                 ", costo=" + costo +
                 '}';
+        return salida;
     }
 }
 

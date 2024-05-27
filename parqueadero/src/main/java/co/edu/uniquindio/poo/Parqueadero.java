@@ -33,6 +33,13 @@ public class Parqueadero {
     public boolean parquearVehiculo(Vehiculo vehiculo, int fila, int columna) {
         boolean resultado = false;
 
+        for (Registro registro : historial) {
+            if (registro.getVehiculo().getPlaca().equals(vehiculo.getPlaca()) && registro.getHoraSalida() == null) {
+                System.out.println("Ya existe un vehículo con la misma placa parqueado.");
+                return false;
+            }
+        }
+
         if (fila >= 0 && fila < puestos.length && columna >= 0 && columna < puestos[0].length) {
             Puesto puesto = puestos[fila][columna];
             if (!puesto.estaOcupado()) {

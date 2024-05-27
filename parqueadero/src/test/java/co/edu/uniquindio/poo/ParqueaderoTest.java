@@ -11,7 +11,7 @@ public  class ParqueaderoTest{
         int filas=5;
         int columnas=5;
         Parqueadero parqueadero= new Parqueadero(filas,columnas);
-        int[] tamanio = parqueadero.getTamanio();
+        int[] tamanio = parqueadero.getTamano();
 
         assertEquals(filas, tamanio[0]);
         assertEquals(columnas, tamanio[1]);
