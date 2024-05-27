@@ -41,7 +41,7 @@ public class Parqueadero {
         }
 
         if (fila >= 0 && fila < puestos.length && columna >= 0 && columna < puestos[0].length) {
-            Puesto puesto = puestos[fila][columna];
+            Puesto puesto = puestos[fila-1][columna-1];
             if (!puesto.estaOcupado()) {
                 puesto.asignarVehiculo(vehiculo);
                 vehiculo.setHoraIngreso(LocalDateTime.now());
