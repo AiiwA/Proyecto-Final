@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 public class PuestoTest {
     private static final Logger LOG = Logger.getLogger(PuestoTest.class.getName());
-
+//
     /**
      * Prueba para verificar que las filas y columnas no sean negativas.
      */

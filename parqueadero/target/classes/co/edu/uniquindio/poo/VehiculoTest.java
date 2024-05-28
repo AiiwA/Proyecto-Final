@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 public class VehiculoTest {
     private static final Logger LOG = Logger.getLogger(VehiculoTest.class.getName());
-
+//
     /**
      * Prueba para verificar que el modelo no sea negativo.
      */

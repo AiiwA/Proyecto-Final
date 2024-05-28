@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 public class MotoTest {
     private static final Logger LOG = Logger.getLogger(MotoTest.class.getName());
 
-
+//
     /**
      * Prueba para verificar que la velocidad no sea negativa.
      */
