@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 public class MotoHibridaTest {
     private static final Logger LOG = Logger.getLogger(MotoHibridaTest.class.getName());
 
-
+//
     /**
      * Prueba para verificar que la velocidad no sea negativa.
      */
