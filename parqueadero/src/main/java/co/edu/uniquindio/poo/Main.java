@@ -18,13 +18,7 @@ public class Main {
             System.out.println("ingrese el tamaño de las columnas: ");
             columnas=scanner.nextInt();
             if (filas>0 && columnas>0){
-                System.out.println("Ingrese la tarifa por hora para carro:");
-                double tarifaCarro = scanner.nextDouble();
-                System.out.println("Ingrese la tarifa por hora para moto clásica:");
-                double tarifaMotoClasica = scanner.nextDouble();
-                System.out.println("Ingrese la tarifa por hora para moto híbrida:");
-                double tarifaMotoHibrida = scanner.nextDouble();
-                parqueadero.establecerTarifas(tarifaCarro, tarifaMotoClasica, tarifaMotoHibrida);
+                
                 break;
             } 
             else{
@@ -33,6 +27,13 @@ public class Main {
 
         }
         parqueadero = new Parqueadero(filas, columnas);
+        System.out.println("Ingrese la tarifa por hora para carro:");
+                double tarifaCarro = scanner.nextDouble();
+                System.out.println("Ingrese la tarifa por hora para moto clásica:");
+                double tarifaMotoClasica = scanner.nextDouble();
+                System.out.println("Ingrese la tarifa por hora para moto híbrida:");
+                double tarifaMotoHibrida = scanner.nextDouble();
+                parqueadero.establecerTarifas(tarifaCarro, tarifaMotoClasica, tarifaMotoHibrida);
         
 
         boolean seguir=true;
