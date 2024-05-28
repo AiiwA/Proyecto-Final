@@ -16,7 +16,7 @@ public class CarroTest {
     @Test
     public void modeloNegativo(){
         LOG.info("Inicio de la prueba");
-        Propietario propietario = new Propietario("Alejandro", "Muñoz", "76283");
+        Propietario propietario = new Propietario("Alejandro", "Alvarez", "7637");
         assertThrows(Throwable.class, ()-> new Carro("hdh937", -2009, propietario));
         LOG.info("Fin de la prueba");
     }

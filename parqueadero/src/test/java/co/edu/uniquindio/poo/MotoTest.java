@@ -16,7 +16,7 @@ public class MotoTest {
     @Test
     public void velNegativa(){
         LOG.info("Inicio de la prueba");
-        Propietario propietario = new Propietario("maikel", "guaman", "asies");
+        Propietario propietario = new Propietario("Alejandro", "Alvarez", "7637");
         assertThrows(Throwable.class, ()-> new Moto("dho204", 2015, propietario, -12));
         LOG.info("Fin de la prueba.");
     }

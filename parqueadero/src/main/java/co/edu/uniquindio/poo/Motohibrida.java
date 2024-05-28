@@ -41,6 +41,8 @@ public class Motohibrida extends Moto {
         return horas * tarifa;
     }
 
+    
+
     public double getTarifa(double tarifaCarro, double tarifaMoto, double tarifaMotoHibrida) {
         return tarifaMotoHibrida;
     }

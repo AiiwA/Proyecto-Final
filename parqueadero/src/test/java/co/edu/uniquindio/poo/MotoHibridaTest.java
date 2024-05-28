@@ -14,7 +14,7 @@ public class MotoHibridaTest {
     @Test
     public void velNegativa(){
         LOG.info("Inicio de la prueba");
-        Propietario propietario = new Propietario("juan", "calvo", "2746237468");
+        Propietario propietario = new Propietario("Alejandro", "Alvarez", "7637");
         assertThrows(Throwable.class, ()-> new Motohibrida("dho204", 2015,  propietario, -12));
         LOG.info("Fin de la prueba.");
     }
